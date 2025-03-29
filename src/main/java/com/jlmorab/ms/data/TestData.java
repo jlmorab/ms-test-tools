@@ -32,7 +32,7 @@ public class TestData {
 		return LocalDate.now().minusDays(random);
 	}//end getRandomDate()
 	
-	public static String getRandomObject() {
+	public static String getRandomJsonObject() {
 		Map<String, Object> object = new HashMap<>();
 		ObjectMapper mapper = new ObjectMapper();
 		
@@ -45,8 +45,8 @@ public class TestData {
 		try { 
 			return mapper.writeValueAsString(object);
 		} catch( Exception e ) {
-			return null;
+			return "{}";
 		}//end try
-	}//end getRandomObject()
+	}//end getRandomJsonObject()
 	
 }
