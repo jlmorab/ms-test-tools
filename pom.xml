@@ -11,7 +11,7 @@
 	</parent>
 
 	<artifactId>ms-test-tools</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0</version>
 	<name>ms-test-tools</name>
 	<description>Tools for testing projects</description>
 
@@ -21,6 +21,27 @@
 			<email>jlmorab@hotmail.com</email>
 		</developer>
 	</developers>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>21</java.version>
+	</properties>
+	
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub jlmorab Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/jlmorab/ms</url>
+		</repository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>github</id>
+			<name>GitHub jlmorab - Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/jlmorab/ms</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 
@@ -34,7 +55,49 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
+		
+		<!-- Test Dependencies -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
 
 	</dependencies>
+	
+	<build>
+		
+		<plugins>
+			
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+	            <artifactId>spring-boot-maven-plugin</artifactId>
+	            <configuration>
+	                <skip>true</skip>
+	            </configuration>
+			</plugin>
+			
+		</plugins>
+		
+	</build>
 
 </project>
