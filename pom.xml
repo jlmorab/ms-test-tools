@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.jlmorab.ms</groupId>
+		<artifactId>ms-parent</artifactId>
+		<version>0.1.1</version>
+	</parent>
+
+	<artifactId>ms-test-tools</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>ms-test-tools</name>
+	<description>Tools for testing projects</description>
+
+	<developers>
+		<developer>
+			<name>José Luis Mora Barrios</name>
+			<email>jlmorab@hotmail.com</email>
+		</developer>
+	</developers>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
+	</dependencies>
+
+</project>
