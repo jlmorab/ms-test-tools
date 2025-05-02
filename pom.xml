@@ -7,11 +7,11 @@
 	<parent>
 		<groupId>com.jlmorab.ms</groupId>
 		<artifactId>ms-parent</artifactId>
-		<version>0.2.2</version>
+		<version>0.2.3</version>
 	</parent>
 
 	<artifactId>ms-test-tools</artifactId>
-	<version>0.4.0</version>
+	<version>0.5.0</version>
 	<name>ms-test-tools</name>
 	<description>Tools for testing projects</description>
 
@@ -64,6 +64,11 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
 		</dependency>
 		
 		<dependency>
