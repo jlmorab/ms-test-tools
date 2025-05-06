@@ -11,7 +11,7 @@
 	</parent>
 
 	<artifactId>ms-test-tools</artifactId>
-	<version>0.5.0-SNAPSHOT</version>
+	<version>0.5.1-SNAPSHOT</version>
 	<name>ms-test-tools</name>
 	<description>Tools for testing projects</description>
 
