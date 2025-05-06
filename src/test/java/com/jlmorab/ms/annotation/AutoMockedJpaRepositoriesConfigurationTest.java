@@ -16,6 +16,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Stream;
 
+import org.apache.commons.io.output.TeeOutputStream;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,7 +36,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 @ExtendWith(MockitoExtension.class)
 class AutoMockedJpaRepositoriesConfigurationTest {
 
-	static final String 	TEST_PACKAGE 	= "com.jlmorab.ms";
+	static final String 		TEST_PACKAGE 	= "com.jlmorab.ms";
+	static final PrintStream 	ORIGINAL_OUT 	= System.out;
 	
 	ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	
@@ -60,12 +62,12 @@ class AutoMockedJpaRepositoriesConfigurationTest {
 	void setUp() {
 		reset( metadata, registry );
 		config = new AutoMockedJpaRepositoriesConfiguration();
-		System.setOut(new PrintStream(outContent));
+		System.setOut(new PrintStream( new TeeOutputStream( ORIGINAL_OUT, outContent ) ) );
 	}//end setUp()
 	
 	@AfterEach
 	void tearDown() {
-		System.setOut(null);
+		System.setOut( ORIGINAL_OUT );
 	}//end tearDown()
 	
 	@Test

@@ -57,5 +57,5 @@ class LoggerHelperTest {
 		
 		assertThat( instance.getOutContent() ).isEmpty();
 	}//end initCapture_isolatesOutput()
-
+	
 }
